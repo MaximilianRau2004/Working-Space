@@ -8,3 +8,7 @@ def fib(n):
     return i
 
 print(fib(7))
+
+list = [1,2,3,4]
+for i in range(len(list)):
+    print(i)
