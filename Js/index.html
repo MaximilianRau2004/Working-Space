@@ -8,12 +8,41 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- counter -->
     <label id="countLabel">0</label><br />
     <div id="buttonContainer">
       <button id="incrementButton" class="buttons">Increment</button>
       <button id="decrementButton" class="buttons">Decrement</button>
       <button id="resetButton" class="buttons">Reset</button>
     </div>
+
+    <!-- dice -->
+    <button id="myButton">roll</button><br>
+    <label id="label1" class="myLabels"></label><br>
+    <label id="label2" class="myLabels"></label><br>
+    <label id="label3" class="myLabels"></label><br>
+
+    <!-- age checker -->
+    <label>Enter your age:</label>
+    <input type="text" id="myText"/>
+    <button type="submit" id="myButton">Submit</button>
+    <p id="resultElement"></p>
+
+    <!-- subscription -->
+    <input type="checkbox" id="myCheckbox" name="card"/>
+    <label for="myCheckbox">Subscribe</label><br>
+
+    <input type="radio" id="visaBtn" name="card">
+    <label for="visaBtn">Visa</label><br>
+    <input type="radio" id="masterCardBtn" name="card">
+    <label for="masterCardBtn">MasterCard</label><br>
+    <input type="radio" id="payPalBtn" name="card">
+    <label for="payPalBtn">PayPal</label><br>
+    <button type="submit" id="myButton">Submit</button>
+
+    <p id="subResult"></p>
+    <p id="paymentResult"></p>
+
     <script src="index.js"></script>
   </body>
 </html>
