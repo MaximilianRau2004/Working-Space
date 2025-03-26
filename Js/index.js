@@ -45,23 +45,52 @@ myButton.onclick = function() {
 // age checker
 
 const myText = document.getElementById('myText');
-const mySubmit = document.getElementById('mySubmit');
+const myButton2 = document.getElementById('myButton2');
 const resultElement = document.getElementById('resultElement');
-let age;
 
-mySubmit.onclick = function() {
-    age = myText.value;
-    age = Number(age);
-    if (age >= 100) {
+myButton2.onclick = function() {
+    let age = myText.value.trim();  
+    age = Number(age); 
+
+    if (isNaN(age)) {
+        resultElement.textContent = 'Please enter a valid number.';
+    } else if (age >= 100) {
         resultElement.textContent = 'You are too old.';
     } else if (age >= 18) {
-        resultElement.textContent = 'You are an adult';
-    } else if (age == 0) {
-        resultElement.textContent = 'You were just born';
+        resultElement.textContent = 'You are an adult.';
+    } else if (age === 0) {
+        resultElement.textContent = 'You were just born.';
     } else if (age < 0) {
-        resultElement.textContent = 'You are not born yet';
+        resultElement.textContent = 'You are not born yet.';
+    } else {
+        resultElement.textContent = 'You are a child.';
     }
-    else {
-        resultElement.textContent = 'You are a child';
+};
+
+// checkbox
+
+const myCheckbox = document.getElementById('myCheckbox');
+const visaBtn = document.getElementById('visaBtn');
+const masterCardBtn = document.getElementById('masterCardBtn');
+const payPalBtn = document.getElementById('payPalBtn');
+const myButton3 = document.getElementById('myButton3');
+const subResult = document.getElementById('subResult');
+const PaymentResult = document.getElementById('paymentResult');
+
+myButton3.onclick = function() {
+    if (myCheckbox.checked) {
+        subResult.textContent = 'You are subsribed';
+    } else {
+        subResult.textContent = 'You are not subsribed';
+    }
+
+    if (visaBtn.checked) {
+        PaymentResult.textContent = 'You have selected Visa';
+    } else if (masterCardBtn.checked) {
+        PaymentResult.textContent = 'You have selected MasterCard';
+    } else if (payPalBtn.checked) {
+        PaymentResult.textContent = 'You have selected PayPal';
+    } else {
+        PaymentResult.textContent = 'Please select a payment method';
     }
 }
