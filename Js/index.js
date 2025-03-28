@@ -118,13 +118,38 @@ switch (true) {
    default:
     letterGrade = "F";   
 }
-
+ 
 console.log(letterGrade);
 */
 
-const fullName = "John Doe";
+// Number guessing game
 
-let firstName = fullName.slice(0, fullName.indexOf(" "));
-let lastName = fullName.slice(fullName.indexOf(" ")+1);
+const minNum = 1;
+const maxNum = 100;
+const randomNum = Math.floor(Math.random() * maxNum) + minNum;
 
-console.log(firstName + " " + lastName);
+let attempts = 0;
+let guess;
+let running = true;
+
+while (running) {
+  guess = prompt(`Enter a number between ${minNum} and ${maxNum}`);
+  guess = Number(guess);
+
+  if (isNaN(guess)) {
+    alert("Please enter a valid number.");
+  } else if (guess < minNum || guess > maxNum) {
+    alert(`Please enter a number between ${minNum} and ${maxNum}`);
+  } else {
+    attempts++;
+    if (guess < randomNum) {
+      alert("Too low! try again.");
+    } else if (guess > randomNum) {
+      alert("Too high! try again.");
+    } else {
+      alert(`Congratulations! You guessed the number ${randomNum} in ${attempts} attempts.`);
+      running = false;
+    }
+  }
+}
+
