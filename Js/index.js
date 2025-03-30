@@ -124,6 +124,7 @@ console.log(letterGrade);
 
 // Number guessing game
 
+/** 
 const minNum = 1;
 const maxNum = 100;
 const randomNum = Math.floor(Math.random() * maxNum) + minNum;
@@ -152,4 +153,95 @@ while (running) {
     }
   }
 }
+*/
 
+// calculator
+
+function add(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new TypeError("Both arguments must be numbers");
+  }
+  return a + b;
+}
+
+function sub(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new TypeError("Both arguments must be numbers");
+  }
+  return a - b;
+}
+
+function mul(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new TypeError("Both arguments must be numbers");
+  }
+  return a * b;
+}
+
+function div(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new TypeError("Both arguments must be numbers");
+  }
+  if (b === 0) {
+    throw new Error("Cannot divide by zero");
+  }
+  return a / b;
+}
+
+function mod(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new TypeError("Both arguments must be numbers");
+  }
+  return a % b;
+}
+
+function pow(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new TypeError("Both arguments must be numbers");
+  }
+
+  let c = a;
+  for (let i = 1; i < b; i++) {
+    a *= c;
+  }
+  return a;
+}
+
+function sqrt(a) {
+  if (typeof a !== "number") {
+    throw new TypeError("The argument must be a number");
+  }
+  return Math.sqrt(a);
+}
+
+function fac(a) {
+  if (typeof a !== "number") {
+    throw new TypeError("The argument must be a number");
+  }
+  for (let i = 1; i < a; i++) {
+    a *= i;
+  }
+  return a;
+}
+
+// temperature converter
+
+const textBox = document.getElementById("textBox");
+const toFahrenheit = document.getElementById("toFahrenheit");
+const toCelsius = document.getElementById("toCelsius");
+const result = document.getElementById("result");
+let temp;
+
+function convert() {
+    if (toFahrenheit.checked) {
+        temp = Number(textBox.value); 
+        temp = temp * (9 / 5) + 32;
+        result.textContent = temp.toFixed(1) + " °F";
+    } else if (toCelsius.checked) {
+        temp = Number(textBox.value); 
+        temp = (temp - 32) * (5 / 9);
+        result.textContent = temp.toFixed(1) + " °C";
+    } else {
+        result.textContent = "Select an unit";
+    }
+}

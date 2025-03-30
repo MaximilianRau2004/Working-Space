@@ -1,12 +1,5 @@
-def fac(a):
-    if not isinstance(a, int):
-        raise TypeError("Nur ganze Zahlen erlaubt!")
-    if a < 0:
-        raise ValueError("Fakultät ist nur für positive Zahlen definiert!")
-    result = 1
-    for i in range(1, a + 1):
-        result *= i
-    return result
+import math
+
 
 def add(a, b):
     if not isinstance(a, int) or not isinstance(b, int):
@@ -46,16 +39,17 @@ def pow(a, b):
 def sqrt(a):
     if not isinstance(a, int):
         raise TypeError("Nur ganze Zahlen erlaubt!")
-    left = 0
-    right = a
-    while left <= right:
-        mid = (left+right) // 2
-        if mid*mid == a:
-            return mid
-        elif mid*mid < a:
-            left = mid + 1
-        else:
-            right = mid - 1
+    return math.sqrt(a)
+
+def fac(a):
+    if not isinstance(a, int):
+        raise TypeError("Nur ganze Zahlen erlaubt!")
+    if a < 0:
+        raise ValueError("Fakultät ist nur für positive Zahlen definiert!")
+    result = 1
+    for i in range(1, a + 1):
+        result *= i
+    return result
 
 try:
     a = int(input("Geben Sie bitte die erste Zahl ein: "))
