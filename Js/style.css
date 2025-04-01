@@ -19,7 +19,11 @@
 
 .buttons:hover {
   background-color: hsl(214, 65%, 65%);
-} 
+}
+
+.buttons:active {
+  background-color: hsl(214, 100%, 54%);
+}
 
 body {
   font-family: Verdana;
@@ -74,3 +78,26 @@ label {
 #result {
   font-size: 1.5em;
 }
+
+#container {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+input {
+  font-size: 1em;
+  text-align: center;
+  width: 5%;
+}
+
+#diceResult {
+  font-size: 1.5em;
+  margin: 20px;
+}
+
+#diceImages img {
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+}
+

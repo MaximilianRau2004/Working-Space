@@ -17,45 +17,54 @@
     </div>
 
     <!-- dice -->
-    <button id="myButton" class="buttons">roll</button><br>
-    <label id="label1" class="myLabels"></label><br>
-    <label id="label2" class="myLabels"></label><br>
-    <label id="label3" class="myLabels"></label><br>
+    <button id="myButton" class="buttons">roll</button><br />
+    <label id="label1" class="myLabels"></label><br />
+    <label id="label2" class="myLabels"></label><br />
+    <label id="label3" class="myLabels"></label><br />
 
     <!-- age checker -->
     <label>Enter your age:</label>
-    <input type="text" id="myText"/>
+    <input type="text" id="myText" />
     <button type="submit" id="myButton2" class="buttons">Submit</button>
     <p id="resultElement"></p>
 
     <!-- subscription -->
-    <input type="checkbox" id="myCheckbox" name="card"/>
-    <label for="myCheckbox">Subscribe</label><br>
+    <input type="checkbox" id="myCheckbox" name="card" />
+    <label for="myCheckbox">Subscribe</label><br />
 
-    <input type="radio" id="visaBtn" name="card">
-    <label for="visaBtn">Visa</label><br>
-    <input type="radio" id="masterCardBtn" name="card">
-    <label for="masterCardBtn">MasterCard</label><br>
-    <input type="radio" id="payPalBtn" name="card">
-    <label for="payPalBtn">PayPal</label><br>
+    <input type="radio" id="visaBtn" name="card" />
+    <label for="visaBtn">Visa</label><br />
+    <input type="radio" id="masterCardBtn" name="card" />
+    <label for="masterCardBtn">MasterCard</label><br />
+    <input type="radio" id="payPalBtn" name="card" />
+    <label for="payPalBtn">PayPal</label><br />
     <button type="submit" id="myButton3" class="buttons">Submit</button>
 
     <p id="subResult"></p>
     <p id="paymentResult"></p>
 
     <!-- temperature conversion -->
-     <form>
-        <h1>Temperature conversion:</h1>
-        <input type="number" id="textBox" value="0"><br>
-        <input type="radio" id="toFahrenheit" name="unit">
-        <label for="toFahrenheit">Celsius ➡️ Fahrenheit</label><br>
+    <form>
+      <h1>Temperature conversion:</h1>
+      <input type="number" id="textBox" value="0" /><br />
+      <input type="radio" id="toFahrenheit" name="unit" />
+      <label for="toFahrenheit">Celsius ➡️ Fahrenheit</label><br />
 
-        <input type="radio" id="toCelsius" name="unit">
-        <label for="toCelsius">Fahrenheit ➡️ Celsius</label><br>
+      <input type="radio" id="toCelsius" name="unit" />
+      <label for="toCelsius">Fahrenheit ➡️ Celsius</label><br />
 
-        <button type="button" onclick="convert()" class="buttons">Submit</button>
-        <p id="result"></p>
-     </form>
+      <button type="button" onclick="convert()" class="buttons">Submit</button>
+      <p id="result"></p>
+    </form>
+
+    <div id="container">
+      <h1>Dice Roller</h1>
+      <label># of dice:</label>
+      <input type="number" value="1" min="1" id="numOfDice"/>
+      <button onclick="rollDice()" class="buttons">Roll Dice</button>
+      <div id="diceResult"></div>
+      <div id="diceImages"></div>
+    </div>
 
     <script src="index.js"></script>
   </body>
