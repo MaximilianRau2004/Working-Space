@@ -246,16 +246,6 @@ function convert() {
     }
 }
 
-// random
-function combineStrings(...strings) {
-  return strings.join(" ");
-}
-
-const fullName = combineStrings("Hello", "World", "!");
-
-console.log(fullName); 
-
-
 // dice roller game
 
 function rollDice() {
@@ -272,4 +262,69 @@ function rollDice() {
   }
    diceResult.textContent = `dice: ${values.join(", ")}`;
    diceImages.innerHTML = images.join("");
+}
+
+// random password generator
+
+function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
+  
+  const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+  const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numberChars = "0123456789";
+  const symbolChars = "!@#$%^&*()_+[]{}|;:,.<>?";
+
+  let allowedChars = "";
+  let password = "";
+
+  allowedChars += includeLowercase ? lowercaseChars : "";
+  allowedChars += includeUppercase ? uppercaseChars : "";
+  allowedChars += includeNumbers ? numberChars : "";
+  allowedChars += includeSymbols ? symbolChars : "";
+
+  if (length <= 0) {
+    return "Password length must be greater than 0.";
+  }
+
+  if (allowedChars.length === 0) {
+    return "At least one character type must be selected.";
+  }
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * allowedChars.length);
+    password += allowedChars[randomIndex];
+  }
+
+  return password;
+}
+
+const passwordLength = 12;
+const includeLowercase = true;
+const includeUppercase = true;
+const includeNumbers = true;
+const includeSymbols = true;
+
+const password = generatePassword(passwordLength, includeLowercase, includeUppercase, includeNumbers, includeSymbols);
+
+console.log(`Generated password: ${password}`);
+
+
+let fruits = ["APPLE", "BANANA", "CHERRY", "ELDERBERRY"];
+
+fruits.forEach(capitalize);
+fruits.forEach(display);
+
+function upperCase(element, index, array) {
+  array[index] = element.toUpperCase();
+}
+
+function lowerCase(element, index, array) {
+  array[index] = element.toLowerCase();
+}
+
+function capitalize(element, index, array) {
+  array[index] = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+}
+
+function display(element) {
+  console.log(element);
 }
