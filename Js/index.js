@@ -308,23 +308,106 @@ const password = generatePassword(passwordLength, includeLowercase, includeUpper
 console.log(`Generated password: ${password}`);
 
 
-let fruits = ["APPLE", "BANANA", "CHERRY", "ELDERBERRY"];
 
-fruits.forEach(capitalize);
-fruits.forEach(display);
+const person1 = {
+  firstName: "Spongebob",
+  lastName: "Squarepants",
+  age: 20, 
+  isEmployed: true,
+  sayHello: function () {
+    console.log(`Hello, my name is ${this.firstName} ${this.lastName}`)
+  },
+};
 
-function upperCase(element, index, array) {
-  array[index] = element.toUpperCase();
+const person2 = {
+  firstName: "Patrick",
+  lastName: "Star",
+  age: 20,
+  isEmployed: false,
+};
+
+person1.sayHello(); 
+
+
+function Car(make, model, year, color) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.color = color;
+  this.start = function () {
+    console.log(`Starting ${this.make} ${this.model}`);
+  };
 }
 
-function lowerCase(element, index, array) {
-  array[index] = element.toLowerCase();
+const car1 = new Car("Toyota", "Camry", 2020, "blue");
+const car2 = new Car("Honda", "Civic", 2021, "red");
+const car3 = new Car("Ford", "Mustang", 2022, "black");
+
+car1.start
+
+
+class Product {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+  getInfo() {
+    console.log(`${this.name} costs $${this.price}`);
+  }
+
+  calculateTotal(salesTax) {
+    return this.price + this.price * salesTax;
+  }
 }
 
-function capitalize(element, index, array) {
-  array[index] = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+const salesTax = 0.05;
+
+const product1 = new Product("Laptop", 999.99);
+const product2 = new Product("Smartphone", 699.99);
+
+product1.getInfo(); 
+
+const total = product1.calculateTotal(salesTax);
+console.log(`Total price with tax: $${total.toFixed(2)}`);
+
+
+class MathUtil {
+  static PI = 3.14159;
+
+  static getDiameter(radius) {
+    return radius * 2;
+  }
+  static getCircumference(radius) {
+    return radius * 2 * this.PI;
+  }
 }
 
-function display(element) {
-  console.log(element);
+console.log(`Diameter of a circle with radius 5: ${MathUtil.getDiameter(5)}`);
+console.log(`Circumference of a circle with radius 5: ${MathUtil.getCircumference(5)}`);
+
+
+class User {
+
+  static userCount = 0;
+
+  constructor(username) {
+    this.username = username;
+    User.userCount++;
+  }
+
+  static getUserCount() {
+    console.log(`Total users: ${User.userCount}`);
+  }
+
+  sayHello() {
+    console.log(`Hello, my name is ${this.username}`);
+  }
+
 }
+
+const user1 = new User("Alice");
+const user2 = new User("Bob");
+const user3 = new User("Charlie");
+
+user1.sayHello();
+User.getUserCount();
