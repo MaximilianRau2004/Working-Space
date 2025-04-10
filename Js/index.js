@@ -233,17 +233,17 @@ const result = document.getElementById("result");
 let temp;
 
 function convert() {
-    if (toFahrenheit.checked) {
-        temp = Number(textBox.value); 
-        temp = temp * (9 / 5) + 32;
-        result.textContent = temp.toFixed(1) + " °F";
-    } else if (toCelsius.checked) {
-        temp = Number(textBox.value); 
-        temp = (temp - 32) * (5 / 9);
-        result.textContent = temp.toFixed(1) + " °C";
-    } else {
-        result.textContent = "Select an unit";
-    }
+  if (toFahrenheit.checked) {
+    temp = Number(textBox.value);
+    temp = temp * (9 / 5) + 32;
+    result.textContent = temp.toFixed(1) + " °F";
+  } else if (toCelsius.checked) {
+    temp = Number(textBox.value);
+    temp = (temp - 32) * (5 / 9);
+    result.textContent = temp.toFixed(1) + " °C";
+  } else {
+    result.textContent = "Select an unit";
+  }
 }
 
 // dice roller game
@@ -260,14 +260,19 @@ function rollDice() {
     values.push(value);
     images.push(`<img src="dice/${value}.svg" alt="Dice ${value}">`);
   }
-   diceResult.textContent = `dice: ${values.join(", ")}`;
-   diceImages.innerHTML = images.join("");
+  diceResult.textContent = `dice: ${values.join(", ")}`;
+  diceImages.innerHTML = images.join("");
 }
 
 // random password generator
 
-function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
-  
+function generatePassword(
+  length,
+  includeLowercase,
+  includeUppercase,
+  includeNumbers,
+  includeSymbols
+) {
   const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const numberChars = "0123456789";
@@ -303,19 +308,23 @@ const includeUppercase = true;
 const includeNumbers = true;
 const includeSymbols = true;
 
-const password = generatePassword(passwordLength, includeLowercase, includeUppercase, includeNumbers, includeSymbols);
+const password = generatePassword(
+  passwordLength,
+  includeLowercase,
+  includeUppercase,
+  includeNumbers,
+  includeSymbols
+);
 
 console.log(`Generated password: ${password}`);
-
-
 
 const person1 = {
   firstName: "Spongebob",
   lastName: "Squarepants",
-  age: 20, 
+  age: 20,
   isEmployed: true,
   sayHello: function () {
-    console.log(`Hello, my name is ${this.firstName} ${this.lastName}`)
+    console.log(`Hello, my name is ${this.firstName} ${this.lastName}`);
   },
 };
 
@@ -326,8 +335,7 @@ const person2 = {
   isEmployed: false,
 };
 
-person1.sayHello(); 
-
+person1.sayHello();
 
 function Car(make, model, year, color) {
   this.make = make;
@@ -343,8 +351,7 @@ const car1 = new Car("Toyota", "Camry", 2020, "blue");
 const car2 = new Car("Honda", "Civic", 2021, "red");
 const car3 = new Car("Ford", "Mustang", 2022, "black");
 
-car1.start
-
+car1.start;
 
 class Product {
   constructor(name, price) {
@@ -365,11 +372,10 @@ const salesTax = 0.05;
 const product1 = new Product("Laptop", 999.99);
 const product2 = new Product("Smartphone", 699.99);
 
-product1.getInfo(); 
+product1.getInfo();
 
 const total = product1.calculateTotal(salesTax);
 console.log(`Total price with tax: $${total.toFixed(2)}`);
-
 
 class MathUtil {
   static PI = 3.14159;
@@ -383,11 +389,11 @@ class MathUtil {
 }
 
 console.log(`Diameter of a circle with radius 5: ${MathUtil.getDiameter(5)}`);
-console.log(`Circumference of a circle with radius 5: ${MathUtil.getCircumference(5)}`);
-
+console.log(
+  `Circumference of a circle with radius 5: ${MathUtil.getCircumference(5)}`
+);
 
 class User {
-
   static userCount = 0;
 
   constructor(username) {
@@ -402,7 +408,6 @@ class User {
   sayHello() {
     console.log(`Hello, my name is ${this.username}`);
   }
-
 }
 
 const user1 = new User("Alice");
@@ -411,3 +416,109 @@ const user3 = new User("Charlie");
 
 user1.sayHello();
 User.getUserCount();
+
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  move() {
+    console.log(`${this.name} is moving`);
+  }
+}
+
+class Rabbit extends Animal {
+  constructor(name, age, runSpeed) {
+    super(name, age);
+    this.runSpeed = runSpeed;
+  }
+
+  run() {
+    console.log(`${this.name} is running at ${this.runSpeed} km/h`);
+    super.move();
+  }
+}
+
+class Fish extends Animal {
+  constructor(name, age, swimSpeed) {
+    super(name, age);
+    this.swimSpeed = swimSpeed;
+  }
+}
+
+class Hawk extends Animal {
+  constructor(name, age, flySpeed) {
+    super(name, age);
+    this.flySpeed = flySpeed;
+  }
+}
+
+const rabbit = new Rabbit("Bunny", 2, 30);
+const fish = new Fish("Nemo", 1, 10);
+const hawk = new Hawk("Hawky", 3, 50);
+
+rabbit.run();
+
+
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  set width(width) {
+    if (width <= 0) {
+      throw new Error("Width must be greater than 0.");
+    }
+    this._width = width;
+  }
+
+  set height(height) {
+    if (height <= 0) {
+      throw new Error("Height must be greater than 0.");
+    }
+    this._height = height;
+  }
+
+  get width() {
+    return this._width.toFixed(1);
+  }
+  get height() {
+    return this._height.toFixed(1);
+  }
+
+  get area() {
+    return (this._width * this._height).toFixed(1);
+  }
+
+}
+
+const rectangle = new Rectangle(5, 10);
+
+rectangle.width = 15; 
+rectangle.height = 20; 
+
+console.log(rectangle.width); 
+console.log(rectangle.height); 
+console.log(rectangle.area);
+
+
+const deck = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
+
+function shuffleDeck(deck) {
+  for (let i = deck.length - 1; i > 0; i--) {
+       const random = Math.floor(Math.random() * (i + 1));
+
+       [deck[i], deck[random]] = [deck[random], deck[i]];
+  }
+}
+
+shuffleDeck(deck);
+
+console.log(deck);
+
+
+const date = new Date(1);
+
+console.log(date);
