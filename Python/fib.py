@@ -1,6 +1,6 @@
 import math
 
-def fib(n):
+def fib(n: int) -> int:
     n0 = 0
     n1 = 1
     for i in range(2, n):
@@ -12,7 +12,7 @@ def fib(n):
 print(fib(7))
 
 list = [1,2,3,4]
-for i in range(len(list)):
+for i in list:
     print(i)
 
 

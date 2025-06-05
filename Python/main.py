@@ -30,8 +30,5 @@ def tempConverter():
     else:
         print("Invalid unit")
 
-num = 5
-
-print("Positive" if num > 0 else "Negative")
 
 

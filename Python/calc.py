@@ -1,25 +1,17 @@
 
-def add(a, b):
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
-        raise TypeError("Nur Zahlen erlaubt!")
+def add(a: int | float, b: int | float) -> int | float:
     return a + b
 
-def sub(a, b):
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
-        raise TypeError("Nur Zahlen erlaubt!")
+def sub(a: int | float, b: int | float) -> int | float:
     return a - b
 
-def mul(a, b):
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
-        raise TypeError("Nur Zahlen erlaubt!")
+def mul(a: int | float, b: int | float) -> int | float:
     x = a
     for i in range(b-1):
         a += x
     return a
 
-def div(a, b):
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
-        raise TypeError("Nur Zahlen erlaubt!")
+def div(a: int | float, b: int | float) -> int | float:
     if b == 0:
         raise ZeroDivisionError("Division durch null nicht erlaubt.")
 
@@ -29,9 +21,7 @@ def div(a, b):
         result += 1
     return result
 
-def mod(a, b):
-    if not isinstance(a, int) or not isinstance(b, int):
-        raise TypeError("Nur ganze Zahlen erlaubt!")
+def mod(a: int, b: int) -> int:
     if b == 0:
         raise ZeroDivisionError("Division durch null nicht erlaubt.")
 
@@ -48,17 +38,13 @@ def mod(a, b):
 
     return a
 
-def pow(a, b):
-    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
-        raise TypeError("Nur Zahlen erlaubt!")
+def pow(a: int | float, b: int | float) -> int | float:
     c = a
     for i in range (1, b):
         a *= c
     return a
 
-def sqrt(a):
-    if not isinstance(a, (int, float)):
-        raise TypeError("Nur Zahlen erlaubt!")
+def sqrt(a: int | float) -> int | float:
     if a < 0:
         raise TypeError("Nur positive Zahlen erlaubt!")
     if a == 0 or a == 1:
@@ -76,10 +62,10 @@ def sqrt(a):
         else:
             right = m - 1
         return (right + left) / 2
+    return None
 
-def fac(a):
-    if not isinstance(a, int):
-        raise TypeError("Nur ganze Zahlen erlaubt!")
+
+def fac(a: int) -> int | float:
     if a < 0:
         raise ValueError("Fakultät ist nur für positive Zahlen definiert!")
     result = 1
@@ -119,3 +105,4 @@ def calc():
     except ZeroDivisionError as e:
         print(e)
 
+calc()
