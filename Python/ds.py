@@ -1,6 +1,7 @@
 # list
 my_list = [10, "Hallo", 3.14, True]
 
+my_list[0] = 1
 print(my_list[0])
 print(my_list[-1])
 

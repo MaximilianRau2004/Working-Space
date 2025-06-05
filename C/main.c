@@ -6,7 +6,5 @@ int main() {
     name[1] = 'a'; 
     printf("Hello, %s!\n", name);
 
-    
-
     return 0;
 }
