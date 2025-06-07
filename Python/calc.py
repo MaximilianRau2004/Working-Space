@@ -25,18 +25,7 @@ def mod(a: int, b: int) -> int:
     if b == 0:
         raise ZeroDivisionError("Division durch null nicht erlaubt.")
 
-    negative = a < 0
-
-    a = abs(a)
-    b = abs(b)
-
-    while a >= b:
-        a -= b
-
-    if negative:
-        a *= -1
-
-    return a
+    return a - b * (a // b)
 
 def pow(a: int | float, b: int | float) -> int | float:
     c = a
@@ -44,7 +33,7 @@ def pow(a: int | float, b: int | float) -> int | float:
         a *= c
     return a
 
-def sqrt(a: int | float) -> int | float:
+def sqrt(a: int) -> int:
     if a < 0:
         raise TypeError("Nur positive Zahlen erlaubt!")
     if a == 0 or a == 1:
@@ -52,20 +41,19 @@ def sqrt(a: int | float) -> int | float:
 
     left = 0
     right = a
-    if a < 1:
-        right = 1
+    m = 0
 
-    while left < right:
-        m = (right + left) / 2
+    while left <= right:
+        m = (right + left) // 2
         if m*m < a:
             left = m + 1
         else:
             right = m - 1
-        return (right + left) / 2
-    return None
+    return m
 
 
-def fac(a: int) -> int | float:
+
+def fac(a: int) -> int:
     if a < 0:
         raise ValueError("Fakultät ist nur für positive Zahlen definiert!")
     result = 1
