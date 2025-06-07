@@ -1,5 +1,108 @@
-.idea
-/build
-.out
-.exe
-./target
+# ==========================
+# Allgemeine Ignorierungen
+# ==========================
+
+# Backup-Dateien
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Log-Dateien
+*.log
+
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+pip-wheel-metadata/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ==========================
+# Java (auch für IntelliJ)
+# ==========================
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+target/
+out/
+
+# Maven
+.mvn/
+!**/src/main/**/.keep
+!**/src/test/**/.keep
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# ==========================
+# C/C++
+# ==========================
+*.o
+*.out
+*.obj
+*.exe
+*.a
+*.so
+*.dll
+*.dylib
+*.dSYM/
+build/
+
+# ==========================
+# JavaScript / Node.js
+# ==========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+.cache/
+.next/
+out/
+
+# ==========================
+# Rust
+# ==========================
+/target/
+Cargo.lock
+
+# ==========================
+# IntelliJ / PyCharm / JetBrains IDEs
+# ==========================
+.idea/
+*.iws
+*.ipr
+*.iml
+
+# ==========================
+# VS Code
+# ==========================
+.vscode/
+.history/
+.code-workspace
+
+# ==========================
+# Sonstige Tools / Editor-spezifisch
+# ==========================
+*.sublime-workspace
+*.sublime-project
+*.vscode/
