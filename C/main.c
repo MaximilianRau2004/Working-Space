@@ -1,10 +1,12 @@
 #include <stdio.h>
 
 int main() {
-
-    char name[] = "John Doe";
-    name[1] = 'a'; 
-    printf("Hello, %s!\n", name);
+    
+    printf("%d\n", sqaure(5));
 
     return 0;
+}
+
+int sqaure(int number) {
+    return number * number;
 }
