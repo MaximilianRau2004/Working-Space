@@ -1,6 +1,6 @@
 fn main() {
     
-    let x: i32= -2; // i32: signed 32-bit integer, default in Rust
+    let x: i32 = -2; // i32: signed 32-bit integer, default in Rust
     let y: u32 = 3; // u32: unsigned 32-bit integer
     let float: f32 = 4.9; // f64: 64-bit floating point number, default in Rust
     let boolean = true; // bool: boolean type, can be true or false (1 or 0)

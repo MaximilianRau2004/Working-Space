@@ -1,9 +1,14 @@
 use std::io;
 
 fn main() {
-   let mut input = String::new();
+   
+    let mut input = String::new();
 
-   io::stdin().read_line(&mut input)
-       .expect("Failed to read line");
-    println!("{}", input); 
+    io::stdin().read_line(&mut input)
+        .expect("Failed to read line");
+
+    let int_input: i64 = input.trim().parse().unwrap();
+
+    println!("{}", int_input);
+    
 }
