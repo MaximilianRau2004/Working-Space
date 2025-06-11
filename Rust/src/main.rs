@@ -1,14 +1,12 @@
-use std::io;
-
 fn main() {
-   
-    let mut input = String::new();
+   let result = add(5, 7);
+   println!("The result of adding 5 and 7 is: {}", result);
+}
 
-    io::stdin().read_line(&mut input)
-        .expect("Failed to read line");
-
-    let int_input: i64 = input.trim().parse().unwrap();
-
-    println!("{}", int_input);
-    
+fn add(x: i32, y: i32) -> i32 {
+    let result = x + y;
+    if result > 10 {
+        return result - 10;
+    }
+    result
 }

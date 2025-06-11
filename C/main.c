@@ -4,13 +4,12 @@
 
 int main() {
     
-    srand(time(NULL));
+    int numbers[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    int size = sizeof(numbers) / sizeof(numbers[0]);
 
-    int min = 1;
-    int max = 6;
-
-    int random_number = (rand() % max) + min; 
-    printf("Random number generated: %d\n", random_number);
+    for(int i = 0; i < size; i++) {
+        printf("%d ", numbers[i]);
+    }
 
     return 0;
 }
