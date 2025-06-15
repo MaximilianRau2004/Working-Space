@@ -2,15 +2,32 @@
 #include <stdlib.h>
 #include <time.h>
 
+typedef int Number;
+typedef char String[];
+
+typedef enum {
+    MONDAY = 1,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY,
+    SUNDAY
+} DayOfWeek ;
+
 int main() {
     
-    int numbers[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    int size = sizeof(numbers) / sizeof(numbers[0]);
+    Number x = 5;
+    Number y = 10;
+    Number z = x + y;
+    printf("The sum of %d and %d is %d\n", x, y, z);
 
-    for(int i = 0; i < size; i++) {
-        printf("%d ", numbers[i]);
-    }
+    String greeting = "Hello, World!";
+    printf("%s\n", greeting);
+
+    DayOfWeek today = SUNDAY;
+    printf("Today is day number %d of the week.\n", today);
 
     return 0;
 }
-
+ 

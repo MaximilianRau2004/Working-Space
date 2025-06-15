@@ -4,9 +4,5 @@ fn main() {
 }
 
 fn add(x: i32, y: i32) -> i32 {
-    let result = x + y;
-    if result > 10 {
-        return result - 10;
-    }
-    result
+    x + y
 }
