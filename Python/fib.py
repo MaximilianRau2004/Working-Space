@@ -11,14 +11,4 @@ def fib(n: int) -> int:
 
 print(fib(7))
 
-list = [1,2,3,4]
-for i in list:
-    print(i)
-
-
-a = float(input("Enter a side a: "))
-b = float(input("Enter a side b: "))
-
-c = math.sqrt(a ** 2 + b ** 2)
-print(c)
 
