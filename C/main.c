@@ -2,32 +2,24 @@
 #include <stdlib.h>
 #include <time.h>
 
-typedef int Number;
-typedef char String[];
-
-typedef enum {
-    MONDAY = 1,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY,
-    SATURDAY,
-    SUNDAY
-} DayOfWeek ;
+void birthday(int* age);
 
 int main() {
-    
-    Number x = 5;
-    Number y = 10;
-    Number z = x + y;
-    printf("The sum of %d and %d is %d\n", x, y, z);
+ 
+    int age = 25;
+    int *pAge = &age;
 
-    String greeting = "Hello, World!";
-    printf("%s\n", greeting);
+    birthday(pAge);
+    printf("Age: %d\n", age);
 
-    DayOfWeek today = SUNDAY;
-    printf("Today is day number %d of the week.\n", today);
+    printf("%p\n", &age); 
+
+    printf("%p\n", pAge);
 
     return 0;
+}
+
+void birthday(int* age) {
+    (*age)++;
 }
  

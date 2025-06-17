@@ -11,6 +11,8 @@ print(my_list)
 my_list.remove("Hallo")
 print(my_list)
 
+print(my_list[::-1])
+
 for i in my_list:
     print(i)
 
@@ -23,7 +25,7 @@ print(my_tuple)
 a, b, c, d = my_tuple
 print(a, d)  # 1 Python
 
-# set
+# Set
 my_set = set(my_tuple)
 print(my_set)
 
