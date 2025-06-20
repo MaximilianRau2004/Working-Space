@@ -1,13 +1,22 @@
-import time
 
-my_time = int(input("Enter the time in seconds: "))
+fruits = ['apple', 'banana', 'cherry']
+vegetables = ['carrot', 'potato', 'tomato']
+meats = ['pork', 'beef', 'chicken']
 
-for i in range(my_time, 0, -1):
-    seconds = i % 60
-    minutes = (i // 60) % 60
-    hours = i // 3600
-    print(f"{hours:02}:{minutes:02}:{seconds:02}")
-    time.sleep(1)
+groceries = [fruits, vegetables, meats, ["milk", "cheese", "bread"]]
 
-print("Time's up!")
+for collection in groceries:
+    for item in collection:
+        print(item, end=" ")
+    print()
+
+capitals = {"USA": "Washington D.C.",
+            "Canada": "Ottawa",
+            "Japan": "Tokyo"}
+
+capitals.update({"Germany": "Berlin"})
+
+print(capitals)
+
+
 
