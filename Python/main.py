@@ -1,22 +1,11 @@
+import random
 
-fruits = ['apple', 'banana', 'cherry']
-vegetables = ['carrot', 'potato', 'tomato']
-meats = ['pork', 'beef', 'chicken']
+low = 1
+high = 100
 
-groceries = [fruits, vegetables, meats, ["milk", "cheese", "bread"]]
+number = random.randint(low, high)
 
-for collection in groceries:
-    for item in collection:
-        print(item, end=" ")
-    print()
-
-capitals = {"USA": "Washington D.C.",
-            "Canada": "Ottawa",
-            "Japan": "Tokyo"}
-
-capitals.update({"Germany": "Berlin"})
-
-print(capitals)
+print(number)
 
 
-
+ 
