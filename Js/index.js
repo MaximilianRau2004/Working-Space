@@ -95,7 +95,7 @@ myButton3.onclick = function () {
   }
 };
 
-// ternär: condition ? exprIfTrue : exprIfFalse
+// ternary: condition ? exprIfTrue : exprIfFalse
 
 /** 
  * switch
@@ -318,6 +318,8 @@ const password = generatePassword(
 
 console.log(`Generated password: ${password}`);
 
+
+// Object oriented programming
 const person1 = {
   firstName: "Spongebob",
   lastName: "Squarepants",
@@ -517,7 +519,6 @@ function shuffleDeck(deck) {
 shuffleDeck(deck);
 
 console.log(deck);
-
 
 const date = new Date(1);
 
