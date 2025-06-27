@@ -20,6 +20,8 @@ for i in my_list:
 my_tuple = (1, 2, 3, "python")
 print(my_tuple)
 
+one_element_tuple = (1,)
+
 # my_tuple[1] = 5  # ❌ Fehler!
 
 a, b, c, d = my_tuple

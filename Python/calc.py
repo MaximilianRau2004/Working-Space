@@ -67,25 +67,26 @@ def calc():
         sign = input("Geben Sie bitte die Operation ein (+, -, *, /, %, !, **, sqrt): ")
 
         if sign == "!":
-            print(fac(a))
+            print(f"Ergebnis: {fac(a)}")
         elif sign == "sqrt":
-            print(sqrt(a))
+            print(f"Ergebnis: {sqrt(a)}")
         else:
             b = int(input("Geben Sie bitte die zweite Zahl ein: "))
-            if sign == "+":
-                print(add(a, b))
-            elif sign == "-":
-                print(sub(a, b))
-            elif sign == "*":
-                print(mul(a, b))
-            elif sign == "/":
-                print(div(a, b))
-            elif sign == "%":
-                print(mod(a, b))
-            elif sign == "**":
-                print(pow(a, b))
-            else:
-                print("Ungültige Operation")
+            match sign:
+                case "+":
+                    print(f"Ergebnis: {add(a, b)}")
+                case "-":
+                    print(f"Ergebnis: {sub(a, b)}")
+                case "*":
+                    print(f"Ergebnis: {mul(a, b)}")
+                case "/":
+                    print(f"Ergebnis: {div(a, b)}")
+                case "%":
+                    print(f"Ergebnis: {mod(a, b)}")
+                case "**":
+                    print(f"Ergebnis: {pow(a, b)}")
+                case _:
+                    print("Ungültige Operation")
     except ValueError as e:
         print(e)
     except TypeError as e:

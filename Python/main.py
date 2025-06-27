@@ -1,33 +1,30 @@
 
-def get_phone(country, area, first, last):
-    return f"+{country}-{area}-{first}-{last}"
+doubles = [x * 2 for x in range(1, 11)]
+fruits = ['apple', 'banana', 'cherry']
+fruits = [fruit.upper() for fruit in fruits]
+numbers = [1, -2, 3, -4, 5, -6]
+positive_nums = [num for num in numbers if num >= 0]
 
-phone_num = get_phone(1, 234, 567, 890)
-print(phone_num)
+print(fruits)
+print(positive_nums)
 
-def add(*args):
-    total = 0
-    for arg in args:
-        total += arg
-    return total
+def day_of_week(day):
+    match day:
+        case 1:
+            return "Monday"
+        case 2:
+            return "Tuesday"
+        case 3:
+            return "Wednesday"
+        case 4:
+            return "Thursday"
+        case 5:
+            return "Friday"
+        case 6:
+            return "Saturday"
+        case 7:
+            return "Sunday"
+        case _:
+            return "Invalid day"
 
-def display_name(*args):
-    for arg in args:
-        print(arg)
-
-def print_address(**kwargs):
-    for key, value in kwargs.items():
-        print(f"{key}: {value}")
-
-def shipping_label(*args, **kwargs):
-    print("Shipping order:")
-    for arg in args:
-        print(arg, end=" ")
-    print()    
-    for key, value in kwargs.items():
-        print(f"{key}: {value}", end=" ")
-
-display_name("John", "Doe", "Jane", "Smith")
-print_address(street="123 Fake St.", city="Detroit", state="MI", zip="54321")
-shipping_label("John", "Doe", "Jane", "Smith",
-               street="123 Fake St.", city="Detroit", state="MI", zip="54321" )
+print(day_of_week(1))
