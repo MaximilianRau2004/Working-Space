@@ -498,11 +498,11 @@ class Rectangle {
 
 const rectangle = new Rectangle(5, 10);
 
-rectangle.width = 15; 
-rectangle.height = 20; 
+rectangle.width = 15;
+rectangle.height = 20;
 
-console.log(rectangle.width); 
-console.log(rectangle.height); 
+console.log(rectangle.width);
+console.log(rectangle.height);
 console.log(rectangle.area);
 
 
@@ -510,9 +510,9 @@ const deck = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
 
 function shuffleDeck(deck) {
   for (let i = deck.length - 1; i > 0; i--) {
-       const random = Math.floor(Math.random() * (i + 1));
+    const random = Math.floor(Math.random() * (i + 1));
 
-       [deck[i], deck[random]] = [deck[random], deck[i]];
+    [deck[i], deck[random]] = [deck[random], deck[i]];
   }
 }
 
@@ -523,3 +523,43 @@ console.log(deck);
 const date = new Date(1);
 
 console.log(date);
+
+// closures
+function createScoreManager() {
+  let score = 0;
+
+  function increaseScore(points) {
+    score += points;
+    console.log(`+${points} points, total score: ${score}`);
+  }
+
+  function decreaseScore(points) {
+    score -= points;
+    console.log(`-${points} points, total score: ${score}`);
+  }
+
+  function getScore() {
+    return score;
+  }
+  return {
+    increaseScore,
+    decreaseScore,
+    getScore,
+  };
+}
+
+const scoreManager = createScoreManager();
+
+scoreManager.increaseScore(10);
+scoreManager.decreaseScore(5);
+
+
+function startTimer() {
+  timeoutId = setTimeout(() => window.alert("Timer finished!"), 3000);
+  console.log("Timer started for 3 seconds");
+}
+
+function clearTimer() {
+  clearTimeout(timeoutId);
+  console.log("Timer cleared");
+}
