@@ -524,6 +524,7 @@ const date = new Date(1);
 
 console.log(date);
 
+
 // closures
 function createScoreManager() {
   let score = 0;
@@ -553,6 +554,7 @@ const scoreManager = createScoreManager();
 scoreManager.increaseScore(10);
 scoreManager.decreaseScore(5);
 
+
 // Timer
 function startTimer() {
   timeoutId = setTimeout(() => window.alert("Timer finished!"), 3000);
@@ -564,8 +566,8 @@ function clearTimer() {
   console.log("Timer cleared");
 }
 
-//clock
 
+//clock
 function updateClock() {
 
   const now = new Date();
@@ -579,3 +581,42 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+
+//stop watch
+const display = document.getElementById("display");
+let timer = null;
+let startTime = 0;
+let elapsedTime = 0;
+let isRunning = false;
+
+function start() {
+  if (!isRunning) {
+    startTime = Date.now() - elapsedTime;
+    timer = setInterval(update, 10);
+    isRunning = true;
+  }
+}
+
+function stop() {
+  if (isRunning) {
+    clearInterval(timer);
+    isRunning = false;
+  }
+}
+
+function reset() {
+  clearInterval(timer);
+  elapsedTime = 0;
+  display.textContent = "00:00:00:00";
+  isRunning = false;
+}
+
+function update() {
+  elapsedTime = Date.now() - startTime;
+  const hours = Math.floor(elapsedTime / (1000 * 60 * 60)).toString().padStart(2, "0");
+  const minutes = Math.floor((elapsedTime / (1000 * 60)% 60)).toString().padStart(2, "0");
+  const seconds = Math.floor((elapsedTime / 1000 % 60)).toString().padStart(2, "0");
+  const milliseconds = Math.floor((elapsedTime % 1000) / 10).toString().padStart(2, "0");
+
+  display.textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+}

@@ -56,6 +56,7 @@ p {
 }
 
 h1 {
+  font-size: 2.5em;
   color: hsl(214, 65%, 65%);
 }
 
@@ -121,3 +122,63 @@ input {
   font-weight: bold;
 }
 
+#container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  order: 5px solid;
+  border: 5px solid;
+  border-radius: 40px;
+  display: inline-flex;
+  flex-direction: column;
+  width: auto;
+  padding: 0.2em 0.6em;
+  box-sizing: border-box;
+}
+
+#display {
+  margin-bottom: 15px;
+  font-size: 5em;
+  font-weight: bold;
+  font-family: monospace;
+  color: rgb(59, 59, 59);
+  text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.808);
+}
+
+#controls.buttons {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 5px;
+  min-width: 125px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.5s ease;
+}
+
+#startBtn {
+  background-color: hsla(120, 100%, 50%, 0.781);
+}
+
+#startBtn:hover {
+  background-color: hsl(120, 67%, 45%);
+}
+
+#stopBtn {
+  background-color: hsl(0, 100%, 50%);
+}
+
+#stopBtn:hover {
+  background-color: hsl(0, 67%, 45%);
+}
+
+#resetBtn {
+  background-color: hsl(240, 100%, 50%);
+}
+
+#resetBtn:hover {
+  background-color: hsl(240, 67%, 45%);
+}
