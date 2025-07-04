@@ -553,7 +553,7 @@ const scoreManager = createScoreManager();
 scoreManager.increaseScore(10);
 scoreManager.decreaseScore(5);
 
-
+// Timer
 function startTimer() {
   timeoutId = setTimeout(() => window.alert("Timer finished!"), 3000);
   console.log("Timer started for 3 seconds");
@@ -563,3 +563,19 @@ function clearTimer() {
   clearTimeout(timeoutId);
   console.log("Timer cleared");
 }
+
+//clock
+
+function updateClock() {
+
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, "0");
+  const minutes = now.getMinutes().toString().padStart(2, "0");
+  const seconds = now.getSeconds().toString().padStart(2, "0");
+  const timeString = `${hours}:${minutes}:${seconds}`;
+
+  document.getElementById("clock").textContent = timeString;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
