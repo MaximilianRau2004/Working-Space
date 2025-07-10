@@ -80,3 +80,42 @@ dog.walk()
 dog.pet()
 
 animals = [dog, cat, hawk]
+
+class Employee:
+    count = 0
+    total_salary = 0
+
+    def __init__(self, name, position, salary):
+        self.name = name
+        self.position = position
+        self.salary = salary
+        Employee.count += 1
+        Employee.total_salary += salary
+
+    def get_info(self):
+        return f"{self.name} is a {self.position}"
+
+    @staticmethod
+    def is_valid_position(position):
+        return position in ["manager", "engineer", "sales"]
+
+    @classmethod
+    def get_employee_count(cls):
+        return f"Total count of employees is {cls.count}"
+
+    @classmethod
+    def get_average_salary(cls):
+        if cls.count == 0:
+            return 0
+        else:
+           return f"Average salary of employees is {cls.total_salary / cls.count }"
+
+employee1 = Employee("John", "engineer", 5000)
+employee2 = Employee("Jane", "sales", 4000)
+employee3 = Employee("Bob", "manager", 6000)
+
+print(Employee.is_valid_position("engineer"))
+print(employee1.get_info())
+print(Employee.get_employee_count())
+print(Employee.get_average_salary())
+
