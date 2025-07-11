@@ -621,4 +621,25 @@ function update() {
   display.textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
 }
 
+// calculator
+const display1 = document.getElementById("display1");
 
+function appendToDisplay(input) {
+  display1.value += input;
+}
+
+function calculate() {
+  try {
+    display1.value = eval(display1.value);
+  } catch (error) {
+    display1.value = "Error";
+  }
+}
+
+function clearDisplay() {
+  display1.value = "";
+}
+
+window.appendToDisplay = appendToDisplay;
+window.calculate = calculate;
+window.clearDisplay = clearDisplay;

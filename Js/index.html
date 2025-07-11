@@ -91,6 +91,29 @@
     </div>
   </div>
 
+  <div id="calculator">
+    <input id="display1" readonly>
+       <div id="keys">
+            <button class="calcButton" onClick="appendToDisplay('+')" id="operator-btn">+</button>
+            <button class="calcButton" onClick="appendToDisplay('7')">7</button>
+            <button class="calcButton" onClick="appendToDisplay('8')">8</button>
+            <button class="calcButton" onClick="appendToDisplay('9')">9</button>
+            <button class="calcButton" onClick="appendToDisplay('-')" id="operator-btn">-</button>
+            <button class="calcButton" onClick="appendToDisplay('4')">4</button>
+            <button class="calcButton" onClick="appendToDisplay('5')">5</button>
+            <button class="calcButton" onClick="appendToDisplay('6')">6</button>
+            <button class="calcButton" onClick="appendToDisplay('*')" id="operator-btn">*</button>
+            <button class="calcButton" onClick="appendToDisplay('1')">1</button>
+            <button class="calcButton" onClick="appendToDisplay('2')">2</button>
+            <button class="calcButton" onClick="appendToDisplay('3')">3</button>
+            <button class="calcButton" onClick="appendToDisplay('/')" id="operator-btn">/</button>
+            <button class="calcButton" onClick="appendToDisplay('0')">0</button>
+            <button class="calcButton" onClick="appendToDisplay('.')">.</button>
+            <button class="calcButton" onClick="calculate()">=</button>
+            <button class="calcButton" onClick="clearDisplay()" id="operator-btn">C</button>
+       </div>
+  </div>
+
   <script type="module" src="index.js"></script>
 </body>
 
