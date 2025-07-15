@@ -119,3 +119,26 @@ print(employee1.get_info())
 print(Employee.get_employee_count())
 print(Employee.get_average_salary())
 
+class Book:
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+    def __str__(self):
+        return f"{self.title}, {self.author}, {self.pages}"
+
+    def __eq__(self, other):
+        return self.title == other.title and self.author == other.author and self.pages == other.pages
+
+    def __lt__(self, other):
+        return self.pages < other.pages
+
+    def __gt__(self, other):
+        return self.pages > other.pages
+
+book1 = Book("Python", "John", 100)
+book2 = Book("Java", "Jane", 200)
+book3 = Book("C++", "Bob", 300)
+
+print(book1 == book2)
