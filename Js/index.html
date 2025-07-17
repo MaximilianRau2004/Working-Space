@@ -69,17 +69,23 @@
     <div id="diceImages"></div>
   </div>
 
-  <h1 id="myH1"></h1>
+  <!-- Timer -->
+   <h1>Timer</h1>
 
   <button onclick="startTimer()" id="myButton4" class="buttons">START</button>
   <button onclick="clearTimer()" id="myButton4" class="buttons">CLEAR</button>
+
+  <!-- clock -->
+
+  <h1>Clock</h1>
 
   <div id="clockContainer">
     <div id="clock">00:00:00</div>
   </div>
 
+  <!-- stopwatch -->
   <h1 id="myH1">Stopwatch</h1>
-  
+
   <div id="container1">
     <div id="display">
       00:00:00:00
@@ -91,30 +97,52 @@
     </div>
   </div>
 
+  <!-- calculator -->
   <div id="calculator">
     <input id="display1" readonly>
-       <div id="keys">
-            <button class="calcButton" onClick="appendToDisplay('+')" id="operator-btn">+</button>
-            <button class="calcButton" onClick="appendToDisplay('7')">7</button>
-            <button class="calcButton" onClick="appendToDisplay('8')">8</button>
-            <button class="calcButton" onClick="appendToDisplay('9')">9</button>
-            <button class="calcButton" onClick="appendToDisplay('-')" id="operator-btn">-</button>
-            <button class="calcButton" onClick="appendToDisplay('4')">4</button>
-            <button class="calcButton" onClick="appendToDisplay('5')">5</button>
-            <button class="calcButton" onClick="appendToDisplay('6')">6</button>
-            <button class="calcButton" onClick="appendToDisplay('*')" id="operator-btn">*</button>
-            <button class="calcButton" onClick="appendToDisplay('1')">1</button>
-            <button class="calcButton" onClick="appendToDisplay('2')">2</button>
-            <button class="calcButton" onClick="appendToDisplay('3')">3</button>
-            <button class="calcButton" onClick="appendToDisplay('/')" id="operator-btn">/</button>
-            <button class="calcButton" onClick="appendToDisplay('0')">0</button>
-            <button class="calcButton" onClick="appendToDisplay('.')">.</button>
-            <button class="calcButton" onClick="calculate()">=</button>
-            <button class="calcButton" onClick="clearDisplay()" id="operator-btn">C</button>
-       </div>
+    <div id="keys">
+      <button class="calcButton" onClick="appendToDisplay('+')" id="operator-btn">+</button>
+      <button class="calcButton" onClick="appendToDisplay('7')">7</button>
+      <button class="calcButton" onClick="appendToDisplay('8')">8</button>
+      <button class="calcButton" onClick="appendToDisplay('9')">9</button>
+      <button class="calcButton" onClick="appendToDisplay('-')" id="operator-btn">-</button>
+      <button class="calcButton" onClick="appendToDisplay('4')">4</button>
+      <button class="calcButton" onClick="appendToDisplay('5')">5</button>
+      <button class="calcButton" onClick="appendToDisplay('6')">6</button>
+      <button class="calcButton" onClick="appendToDisplay('*')" id="operator-btn">*</button>
+      <button class="calcButton" onClick="appendToDisplay('1')">1</button>
+      <button class="calcButton" onClick="appendToDisplay('2')">2</button>
+      <button class="calcButton" onClick="appendToDisplay('3')">3</button>
+      <button class="calcButton" onClick="appendToDisplay('/')" id="operator-btn">/</button>
+      <button class="calcButton" onClick="appendToDisplay('0')">0</button>
+      <button class="calcButton" onClick="appendToDisplay('.')">.</button>
+      <button class="calcButton" onClick="calculate()">=</button>
+      <button class="calcButton" onClick="clearDisplay()" id="operator-btn">C</button>
+    </div>
   </div>
 
-  <script type="module" src="index.js"></script>
+  <!-- DOM -->
+  <h1 id="my-heading">Food R Us</h1>
+
+  <div class="fruits">Apple</div>
+  <div class="fruits">Banana</div>
+  <div class="fruits">Coconut</div>
+
+  <h4>Root Vegetables</h4>
+  <ul id ="vegetables">
+    <li id="beets">Beets</li>
+    <li id="carrots">Carrots</li>
+    <li id="potatoes">Potatoes</li>
+  </ul>
+
+  <h4>Non-Root Vegetables</h4>
+  <ul id="non-vegetables">
+    <li>Broccoli</li>
+    <li>Celery</li>
+    <li>Onions</li>
+  </ul>
+
+  <script src="index.js"></script>
 </body>
 
 </html>

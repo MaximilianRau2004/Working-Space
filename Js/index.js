@@ -22,7 +22,6 @@ resetBtn.onclick = function () {
 };
 
 // random number generator
-
 const myButton = document.getElementById("myButton");
 const label1 = document.getElementById("label1");
 const label2 = document.getElementById("label2");
@@ -43,7 +42,6 @@ myButton.onclick = function () {
 };
 
 // age checker
-
 const myText = document.getElementById("myText");
 const myButton2 = document.getElementById("myButton2");
 const resultElement = document.getElementById("resultElement");
@@ -68,7 +66,6 @@ myButton2.onclick = function () {
 };
 
 // checkbox
-
 const myCheckbox = document.getElementById("myCheckbox");
 const visaBtn = document.getElementById("visaBtn");
 const masterCardBtn = document.getElementById("masterCardBtn");
@@ -156,7 +153,6 @@ while (running) {
 */
 
 // calculator
-
 function add(a, b) {
   if (typeof a !== "number" || typeof b !== "number") {
     throw new TypeError("Both arguments must be numbers");
@@ -225,7 +221,6 @@ function fac(a) {
 }
 
 // temperature converter
-
 const textBox = document.getElementById("textBox");
 const toFahrenheit = document.getElementById("toFahrenheit");
 const toCelsius = document.getElementById("toCelsius");
@@ -247,7 +242,6 @@ function convert() {
 }
 
 // dice roller game
-
 function rollDice() {
   const numOfDice = document.getElementById("numOfDice").value;
   const diceResult = document.getElementById("diceResult");
@@ -265,7 +259,6 @@ function rollDice() {
 }
 
 // random password generator
-
 function generatePassword(
   length,
   includeLowercase,
@@ -344,9 +337,6 @@ function Car(make, model, year, color) {
   this.model = model;
   this.year = year;
   this.color = color;
-  this.start = function () {
-    console.log(`Starting ${this.make} ${this.model}`);
-  };
 }
 
 const car1 = new Car("Toyota", "Camry", 2020, "blue");
@@ -505,7 +495,7 @@ console.log(rectangle.width);
 console.log(rectangle.height);
 console.log(rectangle.area);
 
-
+// shuffle deck of cards
 const deck = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
 
 function shuffleDeck(deck) {
@@ -643,3 +633,43 @@ function clearDisplay() {
 window.appendToDisplay = appendToDisplay;
 window.calculate = calculate;
 window.clearDisplay = clearDisplay;
+
+// DOM
+const myHeading = document.getElementById("my-heading");
+
+const fruits = document.getElementsByClassName("fruits");
+
+fruits[0].style.color = "red";
+fruits[1].style.color = "yellow";
+fruits[2].style.color = "brown";
+
+const h4Elements = document.getElementsByTagName("h4");
+const liElements = document.getElementsByTagName("li");
+
+h4Elements[0].style.color = "blue";
+h4Elements[1].style.color = "green";
+
+Array.from(liElements).forEach((li) => {
+  li.style.color = "black";
+});
+
+liElements[0].style.color = "purple";
+liElements[1].style.color = "orange";
+liElements[2].style.color = "gray";
+
+const element = document.querySelector(".fruits");
+element.style.color = "pink";
+
+const fruits2 = document.querySelectorAll(".fruits");
+fruits2[0].style.color = "lightgreen";
+
+const ulElements = document.querySelectorAll("ul");
+
+ulElements.forEach(ul => {
+  const firstChild = ul.firstElementChild;
+  firstChild.style.color = "red";
+});
+
+const element2 = document.getElementById("carrots");
+const prevSibling = element2.previousElementSibling;
+prevSibling.style.color = "green";

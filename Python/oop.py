@@ -121,9 +121,25 @@ print(Employee.get_average_salary())
 
 class Book:
     def __init__(self, title, author, pages):
-        self.title = title
+        self._title = title
         self.author = author
         self.pages = pages
+
+    # getter
+    @property
+    def title(self):
+        return self._title
+
+    # setter
+    @title.setter
+    def title(self, value):
+        if len(value) < 3:
+            raise ValueError("Title must be at least 3 characters long.")
+        self._title = value
+
+    # @title.deleter
+    # def title(self):
+    #    del self._title
 
     def __str__(self):
         return f"{self.title}, {self.author}, {self.pages}"
@@ -141,4 +157,5 @@ book1 = Book("Python", "John", 100)
 book2 = Book("Java", "Jane", 200)
 book3 = Book("C++", "Bob", 300)
 
-print(book1 == book2)
+print(book1)
+
