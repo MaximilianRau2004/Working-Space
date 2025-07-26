@@ -28,6 +28,7 @@ build/
 .venv/
 venv/
 pip-wheel-metadata/
+myenv/
 
 # Jupyter
 .ipynb_checkpoints/
